@@ -1,0 +1,14 @@
+{
+  "input": {
+    "receipt_text": "Uber Eats $34.20\nAWS invoice $412.00\nOffice Depot $28.50\nDelta Airlines $890.00"
+  },
+  "output": {
+    "items": [
+      { "item": "Uber Eats", "amount": 34.2, "category": "meals" },
+      { "item": "AWS invoice", "amount": 412.0, "category": "software" },
+      { "item": "Office Depot", "amount": 28.5, "category": "office_supplies" },
+      { "item": "Delta Airlines", "amount": 890.0, "category": "travel" }
+    ],
+    "attempts": 1
+  }
+}

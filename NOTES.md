@@ -46,7 +46,20 @@ would treat data from any external source.
 - Log whether parsing succeeded or failed and why
 - Enough context to reconstruct exactly what happened from logs alone
 
----
+### What I left out
+
+- Test suite with mocked responses
+- Request timeouts
+- Async endpoint
+
+### Where it would still break
+
+- If the model returns valid JSON but with extra fields or wrong types that Pydantic
+  coerces silently — amounts returned as strings would pass but could cause issues downstream
+- If the receipt text itself is ambiguous enough that the model consistently picks the
+  wrong category — the retry won't help because the model isn't technically wrong by
+  its own logic
+- No timeout on the API call — a slow model response would hang the server indefinitely
 
 ### Note on model provider
 
